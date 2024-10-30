@@ -51,7 +51,7 @@ export class RolesComponent implements OnInit {
     else if(role == 'admin' || role == 'company_owner') {
       this.router.navigateByUrl('/admin-company-list');
     } else if(role == 'company_patient' || role == 'patient') {
-      this.router.navigateByUrl('/company-list');
+      this.router.navigateByUrl('/doctor-panel');
     }
   }
 }
