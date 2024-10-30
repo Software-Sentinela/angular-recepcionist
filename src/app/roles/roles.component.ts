@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiceAuthService } from '../services/service-auth.service';
 import { Router } from '@angular/router';
+import { ServiceAuthService } from '../services/service-auth.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class RolesComponent implements OnInit {
   roles: any = {};
 
 
-  constructor(private authService: ServiceAuthService, private route: Router) { }
+  constructor(private authService: ServiceAuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.getRoles();
@@ -28,7 +28,7 @@ export class RolesComponent implements OnInit {
     this.authService.login(loginUser)
       .subscribe(
         response => {
-          this.roles = response.user.roles;     
+          this.roles = response.user.roles;
           console.log(this.roles);
 
         },
@@ -42,14 +42,16 @@ export class RolesComponent implements OnInit {
   goCompany(role : any) : void {
     sessionStorage.setItem("role", role);
 
-    if(role == 'doctor') {
-      this.route.navigateByUrl('/doctor-company-list');
+    if(role == 'doctor' || role == 'company_doctor') {
+      this.router.navigateByUrl('/doctor-company-list');
+    } else if(role == 'receptionist' || role == 'company_receptionist')
+    {
+      this.router.navigateByUrl('/company-list');
     }
-    else if(role == 'receptionist') {
-      this.route.navigateByUrl('/company-list');
-    }
-    else if(role == 'admin') {
-      this.route.navigateByUrl('/admin-company-list');
+    else if(role == 'admin' || role == 'company_owner') {
+      this.router.navigateByUrl('/admin-company-list');
+    } else if(role == 'company_patient' || role == 'patient') {
+      this.router.navigateByUrl('/company-list');
     }
   }
 }

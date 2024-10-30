@@ -14,8 +14,8 @@ export class MeetService {
   constructor(private http: HttpClient) {}
 
   loginGoogle() {
-    // window.open("http://sentinela.sosystemsolucoes.com.br/api/schedulings/google-auth", "_blank")
-    return this.http.get(`${baseUrl}/schedulings/google-auth`);
+    window.open("http://sentinela.sosystemsolucoes.com.br/api/schedulings/google-auth", "_blank")
+    // return this.http.get(`${baseUrl}/schedulings/google-auth`);
   }
 
   createRoomMeet() {
