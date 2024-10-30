@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
+import { Patient } from '../receptionist-panel/Patient';
 import { ServiceAuthService } from '../services/patients.service';
-=======
-import { Patient } from '../receptionist-panel/patient';
-import { ServiceAuthService } from '../services/patients.service';
-import { Router } from '@angular/router';
->>>>>>> c04ed75d4c00c3c66922cf33847f7396d6c82f23
 
 @Component({
   selector: 'app-doctor-patient-schedule',
@@ -27,11 +21,7 @@ export class DoctorPatientScheduleComponent implements OnInit {
 
   showPatient(): void {
     this.patientService.getPatients(
-<<<<<<< HEAD
     sessionStorage.getItem("token"),
-=======
-    sessionStorage.getItem("token"), 
->>>>>>> c04ed75d4c00c3c66922cf33847f7396d6c82f23
     sessionStorage.getItem("companyId"),
     sessionStorage.getItem("patientId"))
     .subscribe(
@@ -42,10 +32,6 @@ export class DoctorPatientScheduleComponent implements OnInit {
         console.log(error);
       }
     );
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> c04ed75d4c00c3c66922cf33847f7396d6c82f23
 
 }
