@@ -38,14 +38,14 @@ search(event:Event): void {
 
 listPatient(): void {
   this.patientService.listPatients(sessionStorage.getItem("token"),sessionStorage.getItem("companyId"))
-  .subscribe(
-    data => {
+  .subscribe({
+    next: (data: any) => {
       this.listPatients = data;
     },
-    error => {
+    error: (error) => {
       console.log(error);
     }
-  );
+  });
 }
 
 selectPatient(patientId: any): void {
@@ -57,16 +57,15 @@ selectPatient(patientId: any): void {
 searchPatient(search: any): void {
   this.patientService.searchPatients(sessionStorage.getItem("token"),
   sessionStorage.getItem("companyId"), search)
-  .subscribe(
-    data => {
+  .subscribe({
+    next: (data: any) => {
       this.listPatients = data;
     },
-    error => {
+    error: (error) => {
       console.log(error);
     }
-  );
+  });
 }
-
 
 
 

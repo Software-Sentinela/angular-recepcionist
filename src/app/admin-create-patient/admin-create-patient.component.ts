@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
+import { Patient } from '../receptionist-panel/Patient';
 import { ServiceAuthService } from '../services/patients.service';
 
 @Component({
@@ -62,17 +62,16 @@ export class AdminCreatePatientComponent implements OnInit {
     this.patientService.createPatients(sessionStorage.getItem("token"),
       sessionStorage.getItem("companyId"), this.patient)
 
-      .subscribe(
-        data => {
+      .subscribe({
+        next: (data: any) => {
           console.log(data);
           this.route.navigateByUrl('/receptionist-panel');
         },
-        error => {
+        error: (error) => {
           console.log(error);
         }
-      );
+  });
   }
-
   setPatient() {
     this.patient.name = this.patientFormGroup.value.name;
     this.patient.surname = this.patientFormGroup.value.surname;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
+import { Patient } from '../receptionist-panel/Patient';
 import { ServiceAuthService } from '../services/patients.service';
 
 @Component({
@@ -74,7 +74,6 @@ export class PatientRegisterComponent implements OnInit {
         }
       );
   }
-
   setPatient() {
     this.patient.name = this.patientFormGroup.value.name;
     this.patient.surname = this.patientFormGroup.value.surname;

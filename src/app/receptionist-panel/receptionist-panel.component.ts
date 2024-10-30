@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
 import { ServiceAuthService } from '../services/patients.service';
+import { Patient } from './Patient';
 
 
 @Component({
@@ -69,7 +69,6 @@ export class ReceptionistPanelComponent implements OnInit {
       }
     );
   }
-
 
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
+import { Patient } from '../receptionist-panel/Patient';
 import { ServiceAuthService } from '../services/patients.service';
 
 @Component({
@@ -40,14 +40,14 @@ export class AdminPatientScheduleComponent implements OnInit {
     if(confirm("Tem certeza que deseja deletar a paciente " + name + "?")) {
       this.patientService.deletePatient(sessionStorage.getItem("token"),
       sessionStorage.getItem("companyId"),id)
-      .subscribe(
-        data => {
+      .subscribe({
+        next: (data) => {
           this.route.navigateByUrl('/admin-pacient-schedule');
         },
-        error => {
+        error: (error) => {
           console.log(error);
         }
-      );
+      });
       this.route.navigateByUrl('/admin-pacient-schedule');
 
     }

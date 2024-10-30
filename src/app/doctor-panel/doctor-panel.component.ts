@@ -56,11 +56,13 @@ export class DoctorPanelComponent implements OnInit {
     this.patientService.searchPatients(sessionStorage.getItem("token"),
     sessionStorage.getItem("companyId"), search)
     .subscribe(
-      data => {
-        this.listPatients = data;
-      },
-      error => {
-        console.log(error);
+      {
+        next: data => {
+          this.listPatients = data;
+        },
+        error: error => {
+          console.log(error);
+        }
       }
     );
   }

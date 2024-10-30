@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Patient } from '../receptionist-panel/patient';
+import { Patient } from '../receptionist-panel/Patient';
 import { ServiceAuthService } from '../services/patients.service';
 
 @Component({
@@ -116,15 +116,15 @@ export class AdminUpdatePatientComponent implements OnInit {
     console.log(this.patient);
     this.patientService.updatePatient(sessionStorage.getItem("token"),
       sessionStorage.getItem("companyId"), sessionStorage.getItem("patientId"), updatedPatient)
-      .subscribe(
-        data => {
+      .subscribe({
+        next: data => {
           console.log(data);
           this.route.navigateByUrl('/admin-patient-schedule');
         },
-        error => {
+        error: error => {
           console.log(error);
         }
-      );
+      });
   }
 
 }
