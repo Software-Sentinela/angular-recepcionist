@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "dist\\sentinela-receptionist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/api/**",
+        "destination": "https://sentinela.sosystemsolucoes.com.br/api/**"
+      }
+    ]
+  }
+}
