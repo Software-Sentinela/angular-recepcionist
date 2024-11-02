@@ -46,12 +46,12 @@ export class RolesComponent implements OnInit {
       this.router.navigateByUrl('/doctor-company-list');
     } else if(role == 'receptionist' || role == 'company_receptionist')
     {
-      this.router.navigateByUrl('/company-list');
+      this.router.navigateByUrl('/receptionist-company-list');
     }
     else if(role == 'admin' || role == 'company_owner') {
       this.router.navigateByUrl('/admin-company-list');
     } else if(role == 'company_patient' || role == 'patient') {
-      this.router.navigateByUrl('/schedule-register');
+      this.router.navigateByUrl('/company-list');
     }
   }
 }
