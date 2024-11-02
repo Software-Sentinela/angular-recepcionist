@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DoctorServices } from '../services/doctors.service';
 import { MeetService } from '../services/meet.service';
 
@@ -22,13 +22,18 @@ export class AboutDoctorComponent implements OnInit {
   monthName: any;
   year: any;
 
-  doctor:any;
-  constructor(private doctorService: DoctorServices, private  router: Router, private meetSvc: MeetService) { }
+  doctorId:any;
+  companyId!: number;
+  constructor(private doctorService: DoctorServices, private  router: Router, private meetSvc: MeetService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.calcDays();
     this.setCounterLength();
-
+    this.route.paramMap.subscribe((params:any) => {
+      console.log({params});
+      this.companyId = params.companyId;
+      this.doctorId = params.doctorId;
+    });
   }
 
 

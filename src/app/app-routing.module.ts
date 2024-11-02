@@ -84,8 +84,10 @@ const routes: Routes = [
 
 // Sobre o médico
 { path: 'about-doctor', component: AboutDoctorComponent, canActivate:[AuthGuardService] }, // Sobre o médico
+{ path: 'about-doctor/:companyId/:doctorId:', component: AboutDoctorComponent, canActivate:[AuthGuardService] }, // Sobre o médico
 
 // Detalhes sobre o dia do médico
+{ path: 'about-doctor-day/:companyId/:doctorId', component: AboutDoctorDayComponent, canActivate: [AuthGuardService] }, // Sobre o dia do médico
 { path: 'about-doctor-day', component: AboutDoctorDayComponent, canActivate:[AuthGuardService] }, // Sobre o dia do médico
 
 // Lista de empresas
@@ -111,6 +113,7 @@ const routes: Routes = [
 
 // Painel do médico
 { path: 'doctor-panel', component: DoctorPanelComponent, canActivate:[AuthGuardService] }, // Painel do médico
+{ path: 'doctor-panel/:companyId', component: DoctorPanelComponent, canActivate:[AuthGuardService] }, // Painel do médico
 
 // Rodapé do médico
 { path: 'footer-doctor', component: FooterDoctorComponent, canActivate:[AuthGuardService] }, // Rodapé do médico
@@ -119,6 +122,7 @@ const routes: Routes = [
 { path: 'doctor-about-doctor', component: DoctorAboutDoctorComponent, canActivate:[AuthGuardService] }, // Sobre o próprio médico
 
 // Lista de empresas do médico
+{ path: 'doctor-company-list/:companyId', component: DoctorCompanyListComponent, canActivate:[AuthGuardService] }, // Lista de empresas do médico
 { path: 'doctor-company-list', component: DoctorCompanyListComponent, canActivate:[AuthGuardService] }, // Lista de empresas do médico
 
 // Sobre o dia do próprio médico

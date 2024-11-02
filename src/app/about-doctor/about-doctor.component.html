@@ -8,7 +8,8 @@
 
         <div class="container">
             <div *ngFor="let day of counter;">
-                <a routerLink="/about-doctor-day">
+                <!-- <a routerLink="/about-doctor-day/"> -->
+                  <a [routerLink]="['/about-doctor-day', companyId, doctorId]">
                     <div *ngIf="checkToday(day, month, year); then thenBlock else elseBlock"></div>
                     <ng-template #thenBlock>
                         <div class="card-container">
