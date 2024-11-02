@@ -11,7 +11,7 @@ const baseUrl = 'https://sentinela.sosystemsolucoes.com.br/api';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceAuthService {
+export class DoctorServices {
   companyId!: any;
   constructor(public http: HttpClient,
     private router: Router
@@ -76,5 +76,11 @@ export class ServiceAuthService {
  //   return this.http.patch<Doctor>(`${baseUrl}/companies/${companyId}/patients/${doctorId}`, objectPatient, {headers : reqHeader});
  // }
 
+ scheduleAppointment(user_id:  number,company_doctor_id: number,happen_at: any, is_remote?: boolean) {
+  console.log(this.companyId);
+
+  const usuario_id = sessionStorage.getItem('')
+  // return this.http.post()
+ }
 
 }

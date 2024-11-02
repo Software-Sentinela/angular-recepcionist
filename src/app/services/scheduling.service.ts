@@ -1,7 +1,7 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ServiceAuthService } from './doctors.service';
+import { DoctorServices } from './doctors.service';
 
 const baseUrl = 'https://sentinela.sosystemsolucoes.com.br/api';
 
@@ -9,7 +9,7 @@ const baseUrl = 'https://sentinela.sosystemsolucoes.com.br/api';
   providedIn: 'root',
 })
 export class SchedulingService {
-  constructor(public doctorSvc: ServiceAuthService) { }
+  constructor(public doctorSvc: DoctorServices) { }
 
 
 

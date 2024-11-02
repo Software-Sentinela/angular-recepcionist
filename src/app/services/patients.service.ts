@@ -11,7 +11,7 @@ const baseUrl = 'https://sentinela.sosystemsolucoes.com.br/api';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceAuthService {
+export class PatientsService {
 
   constructor(private http: HttpClient,
     private router: Router

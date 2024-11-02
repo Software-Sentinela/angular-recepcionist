@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToastService {
+  constructor(private toastSvc: ToastService) {}
 
-constructor() { }
 
+
+
+  showToast(message: string) {
+     this.toastSvc.showToast(message);
+  }
 }
