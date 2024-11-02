@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Doctor } from '../schedule-register/doctor';
-import { ServiceAuthService } from '../services/patients.service';
-import { Patient } from './Patient';
 import { DoctorServices } from '../services/doctors.service';
+import { PatientsService } from '../services/patients.service';
+import { Patient } from './Patient';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class ReceptionistPanelComponent implements OnInit {
   pag : number = 1;
   counter : number = 10;
 
-  constructor( private patientService: ServiceAuthService, private route: Router, private doctorsSvc: DoctorServices) {
+  constructor( private patientService: PatientsService, private route: Router, private doctorsSvc: DoctorServices) {
       this.listPatients = [];
 
   }
@@ -55,7 +55,7 @@ export class ReceptionistPanelComponent implements OnInit {
   }
 
   listAllsDoctors(): void {
-    this.doctorsSvc.
+    // this.doctorsSvc.
   }
 
   selectPatient(patientId: any): void {

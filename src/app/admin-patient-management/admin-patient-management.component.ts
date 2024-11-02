@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceAuthService } from '../services/patients.service';
+import { PatientsService } from '../services/patients.service';
 import { Patient } from './Patient';
 
 
@@ -20,7 +20,7 @@ export class AdminPatientManagementComponent implements OnInit {
   pag : number = 1;
   counter : number = 10;
 
-  constructor( private patientService: ServiceAuthService, private route: Router) {
+  constructor( private patientService: PatientsService, private route: Router) {
     this.listPatients = [];
 
 }

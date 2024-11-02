@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Patient } from '../receptionist-panel/Patient';
-import { ServiceAuthService } from '../services/patients.service';
+import { PatientsService } from '../services/patients.service';
 
 @Component({
   selector: 'app-patient-schedule',
@@ -12,7 +12,7 @@ export class PatientScheduleComponent implements OnInit {
 
     patient = {} as Patient;
 
-  constructor( private patientService: ServiceAuthService,
+  constructor( private patientService: PatientsService,
     private route: Router) { }
 
   ngOnInit(): void {

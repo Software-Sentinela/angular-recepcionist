@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceAuthService } from '../services/doctors.service';
+import { DoctorServices } from '../services/doctors.service';
 import { Doctor } from './doctor';
 
 @Component({
@@ -19,7 +19,7 @@ export class ScheduleRegisterComponent implements OnInit {
   pag : number = 1;
   counter : number = 10;
 
-  constructor( private doctorService: ServiceAuthService, private  route: Router ) {
+  constructor( private doctorService: DoctorServices, private  route: Router ) {
     this.listDoctors = [];
   }
 

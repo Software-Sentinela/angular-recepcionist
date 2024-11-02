@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Patient } from '../receptionist-panel/Patient';
-import { ServiceAuthService } from '../services/patients.service';
+import { PatientsService } from '../services/patients.service';
 
 @Component({
   selector: 'app-patient-register',
@@ -16,7 +16,7 @@ export class PatientRegisterComponent implements OnInit {
   patient = {} as Patient;
 
   constructor(private formBuilder: FormBuilder,
-    private patientService: ServiceAuthService,
+    private patientService: PatientsService,
     private route: Router) {
 
     this.patientFormGroup = this.formBuilder.group({
