@@ -22,15 +22,16 @@
       "es2020",
       "dom"
     ],
-    "typeRoots": ["node_modules/@types"]
-
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "noImplicitAny": false  // Adicionado para garantir tipos explícitos
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "enableIvy": false
-
+    "enableIvy": true  // Alterado para true, se apropriado
   }
 }
